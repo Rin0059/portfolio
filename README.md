@@ -20,7 +20,7 @@
 自分の好きなお酒について口コミを投稿。他の会員の方の口コミも見れます。
 
 
-### デザインブック
+### 設計書
 
 -【ER図】https://drive.google.com/file/d/1o-3wJ-qgMDC0E2woXltc4oROTo-98oeR/view?usp=sharing
 
