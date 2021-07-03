@@ -24,11 +24,16 @@
 
 -【ER図】https://drive.google.com/file/d/1o-3wJ-qgMDC0E2woXltc4oROTo-98oeR/view?usp=sharing
 
+
 -【テーブル定義書】https://1drv.ms/x/s!AjvtsyHrY-WGoBENkX3hDs0NBPWC
 
--【アプリケーション詳細設計】
+
+-【ワイヤーフレーム】
 - [管理者] https://drive.google.com/file/d/1MygvCse-nbCs80ZFaFskpNtv61xT-f5F/view?usp=sharing
 - [会員] https://drive.google.com/file/d/1hwJDTkaAHpJSHTZAbYhHioGWtPDLgcUj/view?usp=sharing
+- 
+
+-【アプリケーション詳細設計書】https://1drv.ms/x/s!AjvtsyHrY-WGoBuLZD__lQWecyUV
 
 
 # チャレンジ要素一覧
