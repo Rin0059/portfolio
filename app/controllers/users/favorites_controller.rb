@@ -1,7 +1,7 @@
 class Users::FavoritesController < ApplicationController
-  def create
+  def create #評価をする
   end
 
-  def destroy
+  def destroy #評価を外す
   end
 end

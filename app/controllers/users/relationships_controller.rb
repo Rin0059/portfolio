@@ -1,7 +1,7 @@
 class Users::RelationshipsController < ApplicationController
-  def create
+  def create #フォローする
   end
 
-  def destroy
+  def destroy #フォローを外す
   end
 end

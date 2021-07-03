@@ -1,7 +1,7 @@
 class Users::LiquorCommentsController < ApplicationController
-  def create
+  def create #口コミを投稿する
   end
 
-  def destroy
+  def destroy #口コミを削除する
   end
 end

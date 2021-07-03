@@ -1,10 +1,10 @@
 class Users::LiquorsController < ApplicationController
-  def index
+  def index #お酒の一覧を表示
   end
 
-  def show
+  def show #お酒の詳細画面を表示
   end
 
-  def search
+  def search #お酒のジャンル検索
   end
 end

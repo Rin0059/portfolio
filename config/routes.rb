@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     get '/about' => 'homes#about'
-    resources :liquors, only:[:index,:show,:new] do
+    resources :liquors, only:[:index,:show] do
       get :search, on: :collection # ジャンル検索機能用
       resource :favorites, only: [:create, :destroy]
       resources :liquor_comments, only: [:create, :destroy]
