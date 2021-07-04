@@ -1,3 +1,18 @@
 // Place all the styles related to the users/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#mainvisual {
+  height: 95vh;
+  background-image: image-url('whisky.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 80px;
+}
+
+.img-wrapper{
+animation-name:fadeInAnime;
+animation-duration:3s;
+animation-fill-mode:forwards;
+opacity:0;
+}
