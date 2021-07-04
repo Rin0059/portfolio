@@ -2,7 +2,7 @@ class Users::LiquorCommentsController < ApplicationController
 
   def create #口コミを投稿する
    @liquor = Liquor.find(params[:liquor_id])
-   @comment = current_user.liquor_comments.new(liquor_comment_path_params)
+   @comment = current_user.liquor_comments.new(user_liquor_liquor_comments_path_params)
    @comment.liquor_id = @liquor.id
    @comment.save
    redirect_to liquor_path(@liquor)

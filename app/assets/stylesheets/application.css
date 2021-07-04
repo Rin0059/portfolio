@@ -13,6 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+  @import "bootstrap";
+  @import 'font-awesome-sprockets';
+  @import 'font-awesome';
+  @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
+
 header {
   margin-bottom: 50px;
  }
+
+ body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
