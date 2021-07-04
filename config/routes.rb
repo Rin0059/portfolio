@@ -13,13 +13,16 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+# ========= 管理者(admin)のルーティング ================
   namespace :admin do
-    get '/admins' => 'admins#top'
+    get '/' => 'homes#top', as: 'top'
     resources :liquors
     resources :genres
     resources :users
   end
-
+  
+  
+ # ========= ユーザー(user)のルーティング ================
   namespace :user do
     get '/about' => 'homes#about'
     resources :liquors, only:[:index,:show, :create, :edit, :update] do

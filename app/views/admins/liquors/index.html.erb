@@ -1,0 +1,34 @@
+<div class = "container pt-5">
+    <div class = "row">
+      <div class = "col-md-12">
+        <h4 class="pb-3">お酒一覧</h4>
+
+        <!--新規登録画面へ-->
+        <p class = "text-right">
+          <%= link_to new_admin_liquor_path, class:"btn btn-info" do %>
+           <i class="fas fa-plus"></i>
+          <% end %>
+        </p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>お酒ID</th>
+              <th>お酒名</th>
+              <th>ジャンル</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @liquors.each do |liquor| %>
+            <tr>
+                <td><%= liquor.id %></td>
+                <td><%= link_to liquor.name, admin_liquor_path(liquor.id) %>  </td>
+                <td><%= liquor.genre.name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= paginate @liquors %>
+      </div>
+    </div>
+  </div>

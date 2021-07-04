@@ -4,27 +4,21 @@
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/d64cb48cf6.js" crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div id="wrapper">
-      <% if flash[:notice] %>
-        <div class="flash-message">
-          <p id='notice'><%= flash[:notice]%></p>
-        </div>
-      <% elsif flash[:alert]%>
-        <div class="flash-message">
-          <p id='alert'><%= flash[:alert] %></p>
-        </div>
-      <% end %>
-      <%= render 'layouts/header' %>
-      <main>
-        <%= yield %>
-      </main>
-    </div>
+    <%= render 'layouts/header' %>
+    <main class="container mt-2">
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+      <%= yield %>
+    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>
