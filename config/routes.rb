@@ -20,15 +20,15 @@ Rails.application.routes.draw do
     resources :genres
     resources :users
   end
-  
-  
+
+
  # ========= ユーザー(user)のルーティング ================
   namespace :user do
     get '/about' => 'homes#about'
     resources :liquors, only:[:index,:show, :create, :edit, :update] do
       get :search, on: :collection # ジャンル検索機能用
       resource :favorites, only: [:create, :destroy]
-      resources :liquor_comments, only: [:create, :destroy]
+      resources :liquor_comments, only: [:index, :create, :destroy]
     end
     patch '/users/withdrawal' => 'users#destroy'#会員ステータスの切替(退会)
     get '/users/withdrawal' => 'users#withdrawal'#退会画面への遷移

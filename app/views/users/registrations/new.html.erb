@@ -1,9 +1,9 @@
-<div id="sign-in-main-visual"></div>
-  <div class="container my-5">
-    <h2>新規会員登録</h2>
+<div class="container">
+  
+  <h2>新規会員登録</h2>
 
   <%= form_with model: @user, url: user_registration_path, id:'new_user', class:'new_user', local: true do |f| %>
-    <%#= render "user/shared/error_messages", resource: resource %>
+
     <div class="row mb-3">
       <label class="col-lg-3">名前</label>
       <div class="col-lg-3">

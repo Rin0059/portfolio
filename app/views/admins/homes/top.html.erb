@@ -1,1 +1,31 @@
-<h1>hoge</h1>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 offset-md-1">
+      <h5 class="d-inline-flex bg-light px-3 py-1 font-weight-bold mt-5 mb-4">お酒一覧</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-borderless">
+          <thead class="thead-light">
+              <tr>
+                 <th>投稿者</th>
+                 <th>口コミ内容</th>
+              </tr>
+          </thead>
+       <% @liquors.each do |liquor| %>
+          <tbody>
+              <tr>
+                <td><u><a href="/admin/liquors/<%= liquor.user.id %>"><%= liquor.created_at.to_s(:slash_and_time) %></a></u></td>
+                <td><%= liquor.user.name %></td>
+                <td><%= liquor.liquor_comments %></td>
+              </tr>
+          </tbody>
+       <% end %>
+      </table>
+    </div>
+  </div>
+
+</div>

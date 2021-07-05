@@ -1,4 +1,10 @@
 class Users::LiquorCommentsController < ApplicationController
+  
+  def index #口コミ一覧
+    @liquors = Liquor.page(params[:page]).per(10)
+    @liquor_comment = LiquorComment.new
+    @user = @user.liquor
+  end
 
   def create #口コミを投稿する
    @liquor = Liquor.find(params[:liquor_id])

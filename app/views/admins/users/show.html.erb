@@ -1,0 +1,18 @@
+<div class='container'>
+  <div class='col-md-8 offset-md-4'>
+   <h2 class = "my-3 py-3"><%= @user.name%>さんの会員詳細</h2>
+    <table class="table table-borderless">
+      <tr><td>会員ID</td><td><%= @user.id%></td></tr>
+      <tr><td>氏名</td><td><%= @user.name%></td></tr>
+　　　<tr><td>メールアドレス</td><td><%= @user.email%></td></tr>
+　　　<tr><td>会員ステータス</td><td><%= @user.user_status%></td></tr>
+
+　　　<tr><td></td><td><%= link_to '編集する',edit_admins_user_path(@user.id), class:"btn btn-success" %>　<%= link_to '口コミ履歴を見る',admin_root_path, class:"btn btn-info" %></td></tr>
+    </table>
+   <div class='col-3 '>
+   <img src="/assets/IMG_9622.JPG" alt="" class='container-fluid mb-5'>
+  </div>
+  </div>
+</div>
+åå
+</div>

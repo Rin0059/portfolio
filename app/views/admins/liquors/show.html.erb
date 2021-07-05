@@ -1,0 +1,25 @@
+ <div class='col-md-9 offset-md-2'>
+  <h2>お酒詳細</h2>
+    <div class='row'>
+     <div class='col-md-1'>
+      <%= attachment_image_tag @liquor, :image, fallback: "no_image.jpg", size: "300x250" %>
+     </div>
+     <div class='col-md-5 offset-md-5'>
+      <table class="table table-borderless">
+       <tr>
+      	  <th>お酒名</th>
+      	  <th><%= @liquor.name %></th>
+     	 </tr>
+       <tr>
+      	  <th>お酒説明</th>
+      	  <th><%= @liquor.detail %></th>
+       </tr>
+       <tr>
+      	  <th>ジャンル</th>
+      	  <th><%= @liquor.genre.name %></th>
+       </tr>
+      </table>
+     </div>
+    </div>
+  <%= link_to "編集する", edit_admin_liquor_path(@liquor), class: "btn btn-success btn-lg" %>
+ </div>

@@ -1,0 +1,28 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>お酒新規登録</h2>
+      <%= form_with model: @liquor, url: admin_liquor_path, local:true do |f| %>
+        <table class='table'>
+         <tr>
+       	   <th>お酒画像</th>
+       	   <th><%= f.attachment_field :image %></th>
+       	 </tr>
+         <tr>
+       	   <th>お酒名</th>
+       	   <th><%= f.text_field :name %></th>
+         </tr>
+         <tr>
+       	   <th>お酒說明</th>
+       	   <th><%= f.text_area :detail %></th>
+         </tr>
+         <tr>
+       	   <th>ジャンル</th>
+       	   <th><%= f.collection_select :genre_id, Genre.all, :id, :name  %></th>
+         </tr>
+        </table>
+        <%= f.submit "新規登録", class: "btn btn-success btn-lg"%>
+       <% end %>
+    </div>
+  </div>
+</div>

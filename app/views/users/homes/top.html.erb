@@ -1,32 +1,40 @@
-<div class="img-wrapper">
-  <div id="mainvisual"></div>
-</div>
+<div id="content" class="top">
+  <div class='top-page'>
+    <div class='header-bottom'></div>
+      <div id="theTarget" class="mb-5">
+        <div class="slide1"></div>
+        <div class="slide2"></div>
+        <div class="slide3"></div>
+        <div class="slide4"></div>
+      </div>
 
-<div class="text">
-  <h1 class="site-title">ながの Cake</h1>
-  <p>ようこそながのCAKEへ!</p>
-  <p>このサイトは、ケーキ販売のECサイトになります。</p>
-  <p>会員ではない方も商品の閲覧ができますが</p>
-  <p>購入には会員登録が必要です。</p>
-</div>
+      <div class="row">
+        <div class='container mt-5 text-center'>
+          <p class='mt-5 text-black-50 display-4 p-3'>LIQUOR TOPICS</p>
+          <div class='row pb-5 topics-text'>
 
+            <ul class="flex">
+              <% @liquors.each do |liquor| %>
+              <li class="item">
+                <%= attachment_image_tag liquor, :image %>
+                <%= link_to liquor_path(liquor) do %>
+                <div class="mask">
+                  <div class="caption">
+                    <h1><%= liquor.name %></h1>
+                    <p>¥<%= (liquor.detail) %></p>
+                  </div>
+                </div>
+              <% end %>
+              </li>
+            <% end %>
+            </ul>
 
-<ul class="flex">
-  <% @liquors.each do |liquor| %>
-  <li class="item">
-    <%= attachment_image_tag liquor, :image %>
-    <%= link_to liquor_path(liquor) do %>
-    <div class="mask">
-      <div class="caption">
-        <h1><%= liquor.name %></h1>
-        <p>¥<%= (liquor.detail) %></p>
+            <div class="text">
+              <%= link_to '全てのお酒を見る', user_liquors_path, class:"btn btn-outline-dark" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  <% end %>
-  </li>
-<% end %>
-</ul>
-
-<div class="text">
-  <%= link_to '全てのお酒を見る', user_liquors_path, class:"btn btn-outline-dark" %>
+  </div>
 </div>

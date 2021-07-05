@@ -1,0 +1,31 @@
+<div class='container'>
+ <div class='row'>
+  <div class='col-9 '>
+   <h2 class = 'my-3 py-3"'>会員一覧</h2>
+    <table class='table mb-5'>
+     <thead>
+      <tr>
+       <th>会員ID</th>
+       <th>氏名</th>
+       <th>メールアドレス</th>
+       <th>ステータス</th>
+      </tr>
+     </thead>
+     <tbody>
+      <% @users.each do |user| %>
+       <tr>
+        <td><%= user.id %></td>
+        <td><%= link_to user.neam, admins_user_path(user) %></td>
+        <td><%= user.email %></td>
+        <td><%= user.user_status %></td>
+       </tr>
+      <% end %>
+     </tbody>
+    </table>
+    <%= paginate @users%>
+  </div>
+  <div class='col-3 mt-5'>
+   <img src="/assets/IMG_9617.JPG" alt="" class='container-fluid mb-5'>
+  </div>
+  </div>
+</div>

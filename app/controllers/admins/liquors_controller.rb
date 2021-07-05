@@ -1,5 +1,6 @@
 class Admins::LiquorsController < ApplicationController
 
+before_action :authenticate_admin!
 
   def index #お酒の一覧を表示
    @liquors = Liquor.all.page(params[:page]).per(10)

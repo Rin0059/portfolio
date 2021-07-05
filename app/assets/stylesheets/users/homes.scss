@@ -1,3 +1,24 @@
 // Place all the styles related to the users/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slide1 {
+  background-image: image-url("whisky.jpg");
+  height: 500px;
+  width: 100%;
+}
+.slide2 {
+  background-image: image-url("wine.jpg");
+  height: 500px;
+  width: 100%;
+}
+.slide3 {
+  background-image: image-url("beer.jpg");
+  height: 500px;
+  width: 100%;
+}
+.slide4 {
+  background-image: image-url("cocktail.jpg");
+  height: 500px;
+  width: 100%;
+}
