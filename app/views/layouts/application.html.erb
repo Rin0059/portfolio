@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
@@ -14,7 +14,7 @@
 
   <body>
     <header><%= render 'layouts/header' %></header>
-    <main class="container mt-2">
+    <main>
       <p id="notice"><%= flash[:notice] %></p>
       <p id="alert"><%= flash[:alert] %></p>
       <%= yield %>

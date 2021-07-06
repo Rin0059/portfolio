@@ -1,38 +1,35 @@
-<div id="content" class="top">
-  <div class='top-page'>
-    <div class='header-bottom'></div>
-      <div id="theTarget" class="mb-5">
-        <div class="slide1"></div>
-        <div class="slide2"></div>
-        <div class="slide3"></div>
-        <div class="slide4"></div>
-      </div>
+<link rel="assets" href="stylesheets/skippr.css" />
+<div class="content">
+  <div id="theTarget" class="mb-5">
+    <div class="slide1"></div>
+    <div class="slide2"></div>
+    <div class="slide3"></div>
+    <div class="slide4"></div>
+  </div>
 
-      <div class="row">
-        <div class='container mt-5 text-center'>
-          <p class='mt-5 text-black-50 display-4 p-3'>LIQUOR TOPICS</p>
-          <div class='row pb-5 topics-text'>
+  <div class="row">
+    <div class='container mt-5 text-center'>
+      <p class='mt-5 text-black-50 display-4 p-3'>LIQUOR TOPICS</p>
+      <div class='row pb-5 topics-text'>
 
-            <ul class="flex">
-              <% @liquors.each do |liquor| %>
-              <li class="item">
-                <%= attachment_image_tag liquor, :image %>
-                <%= link_to liquor_path(liquor) do %>
-                <div class="mask">
-                  <div class="caption">
-                    <h1><%= liquor.name %></h1>
-                    <p>¥<%= (liquor.detail) %></p>
-                  </div>
-                </div>
-              <% end %>
-              </li>
-            <% end %>
-            </ul>
-
-            <div class="text">
-              <%= link_to '全てのお酒を見る', user_liquors_path, class:"btn btn-outline-dark" %>
+        <ul class="flex">
+          <% @liquors.each do |liquor| %>
+          <li class="item">
+            <%= attachment_image_tag liquor, :image %>
+            <%= link_to liquor_path(liquor) do %>
+            <div class="mask">
+              <div class="caption">
+                <h1><%= liquor.name %></h1>
+                <p>¥<%= (liquor.detail) %></p>
+              </div>
             </div>
-          </div>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+
+        <div class="text">
+          <%= link_to '全てのお酒を見る', user_liquors_path, class:"btn btn-outline-dark" %>
         </div>
       </div>
     </div>

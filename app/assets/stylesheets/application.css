@@ -15,8 +15,8 @@
  */
 
   @import "bootstrap";
-  @import 'font-awesome-sprockets';
-  @import 'font-awesome';
+  /*@import 'font-awesome-sprockets';*/
+  /*@import 'font-awesome';*/
 
 .top-page-header {
   /*width: 100vw;*/
@@ -61,12 +61,6 @@
   color: white;
 }
 
-.sign-up {
-  text-decoration: none;
-  color: white;
-}
-
-
 
 .header-center{
   padding-top: 10px;
@@ -106,5 +100,5 @@ footer {
   text-align: center;
   color: white;
   font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
-  background-image: url('whisky.jpg');
+  background-color: black;
 }

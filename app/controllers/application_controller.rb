@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   #==========ログイン後の遷移先を指定=============
     def after_sign_in_path_for(resource_or_scope)
       if resource_or_scope.is_a?(Admin)
-        admin_top_path
+        admin_liquors_index_path
       else
         root_path
       end

@@ -12,15 +12,15 @@
           <thead class="thead-light">
               <tr>
                  <th>投稿者</th>
-                 <th>口コミ内容</th>
+                 <th>説明文</th>
               </tr>
           </thead>
        <% @liquors.each do |liquor| %>
           <tbody>
               <tr>
                 <td><u><a href="/admin/liquors/<%= liquor.user.id %>"><%= liquor.created_at.to_s(:slash_and_time) %></a></u></td>
-                <td><%= liquor.user.name %></td>
-                <td><%= liquor.liquor_comments %></td>
+                <td><%= liquor.name %></td>
+                <td><%= liquor.detail %></td>
               </tr>
           </tbody>
        <% end %>
