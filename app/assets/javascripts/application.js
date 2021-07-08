@@ -22,12 +22,12 @@
 // ↑"is not defined please fix or add global $"と出た為、記述
 
 // オプションを指定してSkipprの実行
-
-$(".theTarget").skippr({
+$(document).on('turbolinks:load', function() {
+   $(".theTarget").skippr({
     // スライドショーの変化（"fade" or "slide"）
     transition : 'slide',
     // 変化にかかる時間（ミリ秒）
-    speed : 3000,
+    speed : 1000,
     // easingの種類
     easing : 'easeOutQuart',
     // ナビゲーションの形（"block" or "bubble"）
@@ -45,3 +45,4 @@ $(".theTarget").skippr({
     // 1枚目のスライド表示時に戻る矢印を表示するかどうか [false]:矢印を隠さない [true]:矢印を隠す
     hidePrevious : true
 });
+})

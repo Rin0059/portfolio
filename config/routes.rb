@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   }
 
 # ========= 管理者(admin)のルーティング ================
-  namespace :admin do
-    get 'liquors/index'
+  namespace :admins do
+    get '/' => 'homes#top', as: 'top'
     resources :liquors
     resources :genres
     resources :users

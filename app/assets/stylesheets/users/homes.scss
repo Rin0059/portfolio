@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  height: 500px;
+  background-color: black;
+  color: #fff;
+}
+header {
+  height: 5rem;
+}
+main {
+  height: 100%;
+}
+.content {
+  height: 100%;
+}
 
 .slide1 {
   background-image: image-url("whisky.jpg");
