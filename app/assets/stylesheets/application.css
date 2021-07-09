@@ -15,20 +15,6 @@
  */
 
   @import "bootstrap";
-  /*@import 'font-awesome-sprockets';*/
-  /*@import 'font-awesome';*/
-
-.top-page-header {
-  /*width: 100vw;*/
-  /*padding: 10px 0 20px 0;*/
-  position: fixed;
-  top: 0;
-  /*height: 65vh;*/
-  background-image: url('whisky.jpg');
-  /*background-repeat: no-repeat;*/
-  /*background-position: center center;*/
-  background-size: cover;
-}
 
 .header-top-content{
   width: 100vw;
@@ -36,8 +22,8 @@
   align-items: center;
   justify-content: space-between;
   margin: 10px 0 30px 0;
-
 }
+
 
 .lists-right {
   display: flex;
@@ -50,7 +36,6 @@
   font-size: 30px;
   text-decoration: none;
   color: white;
-  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
   margin-left: 4%;
 }
 
@@ -62,29 +47,15 @@
 }
 
 
-.header-center{
-  padding-top: 10px;
+.flex-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+  flex-direction: row;
 }
 
-
-
-/*.header-center-top{*/
-/*  font-size: 18px;*/
-/*  color: white;*/
-/*}*/
-
-
-
-/*.header-center-bottom{*/
-/*  font-size: 40px;*/
-/*  color: white;*/
-/*}*/
+.flex-item {
+  margin: 10px auto;
+  padding: 5px 30px;
+}
 
 
  body,
@@ -95,10 +66,10 @@
   text-align: center;
 }
 
+
 footer {
   margin-top: auto;
   text-align: center;
   color: white;
-  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
   background-color: black;
 }

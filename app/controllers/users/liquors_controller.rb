@@ -3,7 +3,7 @@ class Users::LiquorsController < ApplicationController
   def index #お酒の一覧を表示
    @liquors = Liquor.page(params[:page]).per(8)
    @liquor = Liquor.new
-   @user = @user.liquor
+  # @user = @user.liquor
    @liquor_comment = LiquorComment.new
   end
 

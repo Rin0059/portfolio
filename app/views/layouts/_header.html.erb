@@ -1,4 +1,4 @@
-<header class ='top-page-header'>
+<header>
   <div class ="header-top-content">
     <%= link_to root_path, class:"header-title" do %>
       <div>Liquors</div>
@@ -12,8 +12,8 @@
           <li class="nav-item">
             ようこそ、<span class="text-success mr-1"><%= current_user.name %></span>さん！
           </li>
-          <li class="nav-item"><%= link_to "My Page", user_users_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "Liquors", user_liquors_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "My Page", users_users_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "Liquors", users_liquors_path, class: 'nav-link' %></li>
           <!--<li class="nav-item ml-1"><%#= link_to "Review", user_liquor_liquor_comments_path, class: 'nav-link ' %></li>-->
           <li class="nav-item ml-1"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 
@@ -28,16 +28,12 @@
         <% else %>
 
           <!-- ログインしていない時 -->
-          <li class="nav-item"><%= link_to "About", user_about_path, class: 'nav-link' %></li>
-          <li class="nav-item ml-1"><%= link_to "Liquors", user_liquors_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "About", users_about_path, class: 'nav-link' %></li>
+          <li class="nav-item ml-1"><%= link_to "Liquors", users_liquors_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "Sign Up", new_user_registration_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "Log In", new_user_session_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
   </div>
-  <!--<div class ="header-center">-->
-  <!--  <div class ="header-center-top">お酒を語るレビューサイトなら</div>-->
-  <!--  <div class ="header-center-bottom">Liquors</div>-->
-  <!--</div>-->
 </header>

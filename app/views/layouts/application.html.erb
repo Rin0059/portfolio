@@ -13,12 +13,12 @@
   </head>
 
   <body>
-    <header><%= render 'layouts/header' %></header>
+    <%= render 'layouts/header' %>
     <main>
       <p id="notice"><%= flash[:notice] %></p>
       <p id="alert"><%= flash[:alert] %></p>
       <%= yield %>
     </main>
-    <footer><%= render 'layouts/footer' %></footer>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

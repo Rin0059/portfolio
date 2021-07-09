@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
 
  # ========= ユーザー(user)のルーティング ================
-  namespace :user do
+  namespace :users do
     get '/about' => 'homes#about'
     resources :liquors, only:[:index,:show, :create, :edit, :update] do
       get :search, on: :collection # ジャンル検索機能用

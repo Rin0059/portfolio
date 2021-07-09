@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  #=====userのストロングパラメーター===========
+  #========userのストロングパラメーター===========
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :encrypted_password])
     end

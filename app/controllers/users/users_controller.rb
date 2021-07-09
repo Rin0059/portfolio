@@ -1,11 +1,11 @@
 class Users::UsersController < ApplicationController
 
-  before_action :authenticate_customer!
+  before_action :authenticate_user!
 
 
   def show #マイページ(詳細画面)の表示
    @user = current_user
-   @liquors = @user.liquors
+   # @liquors = @user.liquors
    @liquor = Liquor.new
    @liquor_comment = LiquorComment.new
   end
@@ -15,10 +15,10 @@ class Users::UsersController < ApplicationController
   end
 
   def update #会員の登録情報を更新
-   @user = User.find(params[:id])
+   @user = current_user
    if @user.update(user_params)
      flash[:notice] = "変更内容を保存しました"
-     redirect_to current_user_path
+     redirect_to users_users_path
    else
      @user = user
      flash[:alert] = "正しく入力して下さい"

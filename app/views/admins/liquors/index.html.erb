@@ -15,6 +15,7 @@
             <tr>
               <th>お酒ID</th>
               <th>お酒名</th>
+              <th>説明文</th>
               <th>ジャンル</th>
             </tr>
           </thead>
@@ -22,7 +23,8 @@
           <% @liquors.each do |liquor| %>
             <tr>
                 <td><%= liquor.id %></td>
-                <td><%= link_to liquor.name, admin_liquor_path(liquor.id) %>  </td>
+                <td><%= link_to liquor.name, admin_liquor_path(liquor.id) %></td>
+                <td><%= liquor.detail %></td>
                 <td><%= liquor.genre.name %></td>
             </tr>
           <% end %>

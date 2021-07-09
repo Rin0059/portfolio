@@ -2,21 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+header {
+  height: 4rem;
+  background-color: black;
+}
+
+
 body {
   height: 500px;
-  background-color: black;
-  color: #fff;
+  background-color: #FFF;
 }
-header {
-  height: 5rem;
-}
+
 main {
   height: 100%;
 }
+
 .content {
   height: 100%;
 }
 
+// ========= topページのスライド ================
 .slide1 {
   background-image: image-url("whisky.jpg");
   height: 500px;

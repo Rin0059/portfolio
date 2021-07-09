@@ -4,17 +4,17 @@
   <h3>マイページ</h3>
   <div class="row my-4">
     <h6 class="ml-3 mt-1 mr-4 mb-0">登録情報</h6>
-    <%= link_to '編集する', edit_user_path(@user), class:'btn btn-success py-0 px-5 mb-3' %>
+    <%= link_to '編集する', edit_users_users_path(@user), class:'btn btn-success py-0 px-5 mb-3' %>
   </div>
 
   <table class="table table-bordered ">
     <tr>
-      <td class="table-active">氏名</td>
+      <th>氏名</th>
       <td><%= "#{@user.name}" %></td>
     </tr>
 
     <tr>
-      <td class="table-active">メールアドレス</td>
+      <th>メールアドレス</th>
       <td><%= @user.email %></td>
     </tr>
     <tr></tr>
@@ -22,6 +22,6 @@
 
   <div class="row mb-3">
     <h6 class="mt-1 mr-3 mb-0 ml-3">口コミ投稿</h6>
-    <%= link_to '一覧を見る', user_liquor_liquor_comments_path, class:'btn btn-primary py-0 px-5' %>
+    <%#= link_to '一覧を見る', users_liquor_liquor_comments_path, class:'btn btn-primary py-0 px-5' %>
   </div>
 </div>

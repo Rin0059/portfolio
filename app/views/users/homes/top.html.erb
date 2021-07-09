@@ -10,28 +10,19 @@
   <div class="row">
     <div class='container mt-5 text-center'>
       <p class='mt-5 text-black-50 display-4 p-3'>LIQUOR TOPICS</p>
-      <div class='row pb-5 topics-text'>
 
-        <ul class="flex">
+        <div class="row flex-container">
           <% @liquors.each do |liquor| %>
-          <li class="item">
-            <%= attachment_image_tag liquor, :image %>
-            <%= link_to liquor_path(liquor) do %>
-            <div class="mask">
-              <div class="caption">
-                <h1><%= liquor.name %></h1>
-                <p>¥<%= (liquor.detail) %></p>
-              </div>
+            <div class="flex-item">
+              <%= attachment_image_tag liquor, :image %></br>
+              <%= link_to liquor_path(liquor) do %>
+              <%= liquor.name %>
+              <%= (liquor.detail) %>
+              <% end %>
             </div>
-            <% end %>
-          </li>
           <% end %>
-        </ul>
-
-        <div class="text">
-          <%= link_to '全てのお酒を見る', user_liquors_path, class:"btn btn-outline-dark" %>
+          <%= link_to '全てのお酒を見る', users_liquors_path, class:"btn btn-outline-dark" %>
         </div>
-      </div>
     </div>
   </div>
 </div>
