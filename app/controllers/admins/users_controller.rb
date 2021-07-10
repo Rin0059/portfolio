@@ -8,7 +8,7 @@ class Admins::UsersController < ApplicationController
   end
 
   def show #会員の詳細画面を表示
-   @user - User.find(params[:id])
+   @user = User.find(params[:id])
   end
 
   def edit #会員の編集画面を表示
@@ -19,7 +19,7 @@ class Admins::UsersController < ApplicationController
    @user = User.find(params[:id])
    if @user.update(user_params)
      flash[:notice] = "編集されました"
-     redirect_to admin_user_path(@user_id)
+     redirect_to admins_user_path(@user)
    else
      redirect_back(fallback_location: root_path)
    end

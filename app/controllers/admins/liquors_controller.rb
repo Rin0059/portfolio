@@ -12,11 +12,9 @@ before_action :authenticate_admin!
 
   def create #お酒を新規登録
    @liquor = Liquor.new(liquor_params)
-   if @liquor.save
-     redirect_to admin_liquors_paht(@liquor)
-   else
-     render :new
-   end
+
+   @liquor.save
+   redirect_to admins_liquors_path(@liquor)
   end
 
   def show #お酒の詳細画面を表示
@@ -30,7 +28,7 @@ before_action :authenticate_admin!
   def update #お酒の編集を更新
    @liquor = Liquor.find(params[:id])
    if @liquor.update(liquor_params)
-     redirect_to admin_liquors_paht
+     redirect_to admins_liquors_path
    else
      render :edit
    end

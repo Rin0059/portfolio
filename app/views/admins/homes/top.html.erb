@@ -11,6 +11,7 @@
       <table class="table table-borderless">
           <thead class="thead-light">
               <tr>
+                 <th>画像</th>
                  <th>投稿者</th>
                  <th>説明文</th>
               </tr>
@@ -18,7 +19,8 @@
        <% @liquors.each do |liquor| %>
           <tbody>
               <tr>
-                <td><u><a href="/admin/liquors/<%= liquor.user.id %>"><%= liquor.created_at.to_s(:slash_and_time) %></a></u></td>
+                <td><%= attachment_image_tag liquor, :image %></td></br>
+                <!--<td><u><a href="/admin/liquors/<%#= liquor.user.id %>"><%#= liquor.created_at.to_s(:slash_and_time) %></a></u></td>-->
                 <td><%= liquor.name %></td>
                 <td><%= liquor.detail %></td>
               </tr>

@@ -1,9 +1,9 @@
 <% if liquor.favorited_by?(current_user) %>
-  <%= link_to liquor_favorites_path(liquor), method: :delete, remote: true do %>
+  <%= link_to users_liquor_favorites_path(liquor), method: :delete, remote: true do %>
       ♥<%= liquor.favorites.count %>
     <% end %>
     <% else %>
-    <%= link_to liquor_favorites_path(liquor), method: :post, remote: true do %>
+    <%= link_to users_liquor_favorites_path(liquor), method: :post, remote: true do %>
       ♡<%= liquor.favorites.count %>
     <% end %>
 <% end %>

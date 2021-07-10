@@ -21,18 +21,19 @@
             <td>
               <div id="star-rate-<%= @liquor.id %>"></div>
               <script>
-              $('#star-rate-<%= @li.id %>').raty({
-                size: 36,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                readOnly: true,
-                half: false,
-                score: <%= @liquor.star %>,
-              });
+                $('#star-rate-<%= @liquor.id %>').raty({
+                  size: 36,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  readOnly: true,
+                  half: false,
+                  score: <%= @liquor.star %>,
+                });
               </script>
             </td>
             <!--星評価-->
-            
+          <% end %>
+
     </div>
   </div>
 </div>

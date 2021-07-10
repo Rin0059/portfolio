@@ -10,7 +10,7 @@ class Users::LiquorsController < ApplicationController
   def show #お酒の詳細画面を表示
     @liquor = Liquor.find(params[:id])
     @user = User.find(params[:id])
-    @liquors = @user.liquors
+    # @liquors = @user.liquors
   end
 
   def create #お酒の口コミを作成
@@ -24,8 +24,8 @@ class Users::LiquorsController < ApplicationController
       render :index
     end
   end
-  
-  
+
+
 
   def search #お酒のジャンル検索
   end

@@ -7,14 +7,14 @@
     <ul class="flex-item">
       <% @liquors.each do |liquor| %>
       <li>
-        <%= link_to liquor_path(liquor) do %>
+        <%= link_to users_liquor_path(liquor) do %>
           <div class="item">
-            <%= attachment_image_tag liquor, :image %>
+            <%= attachment_image_tag liquor, :image, class:'img' %>
               <div class="mask">
               </div>
           </div>
           <h3 class="mt-3 mb-1"><%= liquor.name %></h3>
-          <p>¥<%= (liquor.detail) %></p>
+          <p><%= (liquor.detail) %></p>
         <% end %>
       </li>
      <% end %>
