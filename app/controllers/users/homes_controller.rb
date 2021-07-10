@@ -1,6 +1,6 @@
 class Users::HomesController < ApplicationController
   def top
-    @liquors = Liquor.limit(4).order('id DESC')
+    @genres = Genre.all
   end
 
   def about

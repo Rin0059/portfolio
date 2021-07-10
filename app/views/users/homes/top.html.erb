@@ -11,16 +11,10 @@
     <div class='container mt-5 text-center'>
       <p class='mt-5 text-white display-4 p-3'>LIQUOR TOPICS</p>
 
-        <div class="card-deck" style="width:25rem">
-          <% @liquors.each do |liquor| %>
-            <div class="card">
-              <%= attachment_image_tag liquor, :image, class:'img' %></br>
-              <%= link_to users_liquors_path(liquor) do %>
-              <%= liquor.name %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+      <div class="col-md-2 mt-5">
+        <%= render "/layouts/sidebar", genre: @genre %>
+      </div>
+
       <%= link_to '全てのお酒を見る', users_liquors_path, class:"btn btn-outline-dark" %>
     </div>
   </div>

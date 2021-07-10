@@ -5,9 +5,9 @@
     <p>※商品画像をクリックすると、詳細をご覧いただけます。</p>
   </div>
     <ul class="flex-item">
-      <% @liquors.each do |liquor| %>
+      <% @liquor_comment.each do |liquor_comment| %>
       <li>
-        <%= link_to liquor_path(liquor) do %>
+        <%= link_to user_liquor_liquor_comments_path(liquor_comment) do %>
           <div class="item">
             <%= attachment_image_tag liquor, :image %>
               <div class="mask">

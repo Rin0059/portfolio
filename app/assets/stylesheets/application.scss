@@ -4,7 +4,7 @@
 
 header {
   height: 4rem;
-  background-color: black;
+  background-image: url("header-footer.jpeg");
 }
 
 
@@ -72,6 +72,7 @@ main {
   color: white;
 }
 
+
 .table {
   width: 100%;
   max-width: 100%; /* 画像幅以上拡大しないようにする指定 */
@@ -81,9 +82,7 @@ footer {
   margin-top: auto;
   text-align: center;
   color: white;
-  background-image:url( header_footer.png);
-  background-color: black;
-  background-size: cover;
+  background-image: url("header-footer.jpeg");
 }
 
 
@@ -107,4 +106,30 @@ footer {
   background-image: image-url("cocktail.jpg");
   height: 500px;
   width: 100%;
+}
+
+// =========== topページのジャンル一覧 ============
+
+.thumb_list {
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thumb_list li {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 0 0 0 auto;
+}
+
+.thumb_item_inner {
+  background-size: 100% 100%;
+}
+
+.svg {
+    display: block;
+    margin: 0 auto;
+    padding: 23.19588% 0 0;
 }
