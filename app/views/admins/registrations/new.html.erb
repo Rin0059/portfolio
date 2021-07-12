@@ -1,29 +1,26 @@
-<h3 class="ml-4 mb-5">管理者登録</h3>
+<div class="content">
+<h3>管理者登録</h3>
 <%= form_with model: @admin, url: admin_registration_path, id:'new_user', class: 'new_user', local: true do |f|%>
   <%= render "admins/shared/error_messages", resource: resource %>
-  <div class="row">
-    <label class="col-lg-3">メールアドレス</label>
-    <div class="col-lg-3">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: 'ml-5' %>
-    </div>
-  </div><br>
 
-  <div class="row">
-    <label class="col-lg-3">パスワード
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード %><br />
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>文字以上)</em>
-    <% end %></label>
-    <div class="col-lg-3">
-      <%= f.password_field :password, autocomplete: "encrypted_password", class: 'ml-5' %>
-    </div>
-  </div><br>
+    <em>(<%= @minimum_password_length %>文字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "encrypted_password" %>
+  </div>
 
-  <div class="row">
-    <label class="col-lg-3">パスワード（確認用）</label>
-    <div class="col-lg-3">
-      <%= f.password_field :password_confirmation, autocomplete: "encrypted_password", class: 'ml-5' %>
-    </div>
-  </div><br>
+
+  <div class="field">
+    <%= f.label :パスワード（確認用）%>
+    <%= f.password_field :password_confirmation, autocomplete: "encrypted_password" %>
+  </div>
 
   <div class="actions">
     <%= f.submit "新規登録", class: "btn btn-success col-lg-2" %>
