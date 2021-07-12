@@ -4,19 +4,20 @@
 
 header {
   height: 4rem;
-  background-image: url("header-footer.jpeg");
+  background-image: url("header_footer.jpeg");
 }
 
 
 body {
   height: 100%;
-  background-color: #333333;
-  color: white;
+  width: 100%;
+  background-color: white;
+  color: #996666;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  // background-image: url("body.jpeg");
+  background-image: url("body.jpg");
   // background-color:rgba(255,255,255,0.1);
   // background-blend-mode:darken;
   // height: 800px;
@@ -50,7 +51,7 @@ main {
 .header-title {
   font-size: 30px;
   text-decoration: none;
-  color: white;
+  color: #996666;
   margin-left: 4%;
 }
 
@@ -58,7 +59,7 @@ main {
 .nav-link {
   text-decoration: none;
   margin-right: 3vw;
-  color: white;
+  color: #996666;
 }
 
 
@@ -69,7 +70,7 @@ main {
 }
 
 .p,th,td {
-  color: white;
+  color: #996666;
 }
 
 
@@ -81,8 +82,8 @@ main {
 footer {
   margin-top: auto;
   text-align: center;
-  color: white;
-  background-image: url("header-footer.jpeg");
+  color: #996666;
+  background-image: url("header_footer.jpeg");
 }
 
 
