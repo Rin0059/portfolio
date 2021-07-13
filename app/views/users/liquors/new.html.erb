@@ -1,0 +1,43 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>お酒の新規投稿</h2>
+      <%= form_with model: @liquor, url: users_liquors_path, local:true do |f| %>
+        <table class='table'>
+         <tr>
+       	   <th>お酒画像</th>
+       	   <td><%= f.attachment_field :image %></td>
+       	 </tr>
+         <tr>
+       	   <th>お酒名</th>
+       	   <td><%= f.text_field :name %></td>
+         </tr>
+         <tr>
+       	   <th>口コミ</th>
+       	   <td><%= f.text_area :detail %></td>
+         </tr>
+         <tr>
+       	   <th>ジャンル</th>
+       	   <td><%= f.collection_select :genre_id, Genre.all, :id, :name  %></td>
+         </tr>
+         <tr>
+           <th>評価</th>
+           <td><%= f.hidden_field :rate, id: :review_star %></td>
+
+           <script>
+           $('#star').raty({
+             size: 20,
+             starOff:  '<%= asset_path('star-off.png') %>',
+             starHalf: '<%= asset_path('star-half.png') %>',
+             starOn : '<%= asset_path('star-on.png') %>',
+             scoreName: 'liquor[rate]',
+             half: true,
+           });
+           </script>
+         </tr>
+        </table>
+        <%= f.submit "投稿", class: "btn btn-success btn-lg"%>
+       <% end %>
+    </div>
+  </div>
+</div>

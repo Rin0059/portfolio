@@ -3,12 +3,20 @@
     <div class = "col-md-12">
       <h2 class="site-title mb-3">お酒一覧</h2>
     </div>
+
+    <!--新規登録画面へ-->
+    <p class = "text-right">
+      <%= link_to new_users_liquor_path, class:"btn btn-info" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </p>
+
     <table class="table">
           <thead>
             <tr>
               <th>画像</th>
               <th>銘柄</th>
-              <th>説明文</th>
+              <th>口コミ</th>
               <th>ジャンル</th>
             </tr>
           </thead>

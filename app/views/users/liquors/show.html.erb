@@ -13,9 +13,9 @@
           <%= @liquor.detail %>
         </p>
       </div>
-       <%= render 'favorites/favorite-btn', liquor: @liquor %>
+       <%#= render 'favorites/favorite-btn', liquor: @liquor %>
         <td>
-          <td><%= link_to "#{@liquor.liquor_comments.count} コメント", liquor_path(@liquor.id) %></td>
+          <td><%#= link_to "#{@liquor.liquor_comments.count} コメント", liquor_path(@liquor.id) %></td>
             <% if current_user == @user %>
             <!--星評価-->
             <td>

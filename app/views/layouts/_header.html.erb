@@ -9,12 +9,9 @@
         <% if user_signed_in? %>
 
           <!--userがログインしている時 -->
-          <li class="nav-item">
-            ようこそ、<span class="text-success mr-1"><%= current_user.name %></span>さん！
-          </li>
           <li class="nav-item"><%= link_to "My Page", users_users_path, class: 'nav-link' %></li>
           <li class="nav-item ml-1"><%= link_to "Liquors", users_liquors_path, class: 'nav-link' %></li>
-          <!--<li class="nav-item ml-1"><%#= link_to "Review", user_liquor_liquor_comments_path, class: 'nav-link ' %></li>-->
+          <!--<li class="nav-item ml-1"><%#= link_to "Review", users_liquor_liquor_comments_path, class: 'nav-link ' %></li>-->
           <li class="nav-item ml-1"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
 
         <% elsif admin_signed_in? %>

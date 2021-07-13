@@ -1,7 +1,5 @@
 class Admins::GenresController < ApplicationController
 
-  before_action :authenticate_admin!
-
 
   def index #ジャンル一覧・追加を表示
    @genre = Genre.new

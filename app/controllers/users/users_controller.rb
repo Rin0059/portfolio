@@ -5,9 +5,6 @@ class Users::UsersController < ApplicationController
 
   def show #マイページ(詳細画面)の表示
    @user = current_user
-   # @liquors = @user.liquors
-   @liquor = Liquor.new
-   @liquor_comment = LiquorComment.new
   end
 
   def edit #会員情報の編集画面を表示
