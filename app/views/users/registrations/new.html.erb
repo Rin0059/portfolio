@@ -5,36 +5,36 @@
   <%= form_with model: @user, url: user_registration_path, id:'new_user', class:'new_user', local: true do |f| %>
 
     <div class="row mb-3">
-      <label class="col-lg-3">名前</label>
-      <div class="col-lg-3">
+      <label class="col-lg-4">名前</label>
+      <div class="col-lg-4">
         <%= f.text_field :name, autocomplete: 'name', class:"mb-2" %>
       </div>
     </div>
 
       <div class="row mb-3">
-        <label class="col-lg-3">メールアドレス</label>
-        <div class="col-lg-3">
+        <label class="col-lg-4">メールアドレス</label>
+        <div class="col-lg-4">
           <%= f.email_field :email, autocomplete: "email", class:'ml-5', placeholder:'sample@exanple.com' %>
         </div>
       </div>
 
       <div class="row mb-3">
-        <label class="col-lg-3">パスワード(6文字以上)</label>
-        <div class="col-lg-3">
+        <label class="col-lg-4">パスワード(6文字以上)</label>
+        <div class="col-lg-4">
           <%= f.password_field :password, autocomplete: "new-password", class:'ml-5' %>
         </div>
       </div>
 
       <div class="row mb-3">
-        <label class="col-lg-3">パワスワード(確認用)</label>
-        <div class="col-lg-3">
+        <label class="col-lg-4">パワスワード(確認用)</label>
+        <div class="col-lg-4">
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'ml-5' %>
         </div>
       </div>
 
       <div class="row">
-        <lavel class="col-lg-3"></lavel>
-        <div class="col-lg-3">
+        <lavel class="col-lg-4"></lavel>
+        <div class="col-lg-4">
           <%= f.submit "   新規登録   " , class:'btn btn-success ml-5 btn-sm px-5' %>
         </div>
       </div>

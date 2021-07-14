@@ -13,26 +13,46 @@
           <%= @liquor.detail %>
         </p>
       </div>
-       <%#= render 'favorites/favorite-btn', liquor: @liquor %>
+
+        <% if current_user == @user %>
+        <!--星評価-->
         <td>
-          <td><%#= link_to "#{@liquor.liquor_comments.count} コメント", liquor_path(@liquor.id) %></td>
-            <% if current_user == @user %>
-            <!--星評価-->
-            <td>
-              <div id="star-rate-<%= @liquor.id %>"></div>
-              <script>
-                $('#star-rate-<%= @liquor.id %>').raty({
-                  size: 36,
-                  starOff:  '<%= asset_path('star-off.png') %>',
-                  starOn : '<%= asset_path('star-on.png') %>',
-                  readOnly: true,
-                  half: false,
-                  score: <%= @liquor.star %>,
-                });
-              </script>
-            </td>
-            <!--星評価-->
+          <div id="star-rate-<%= @liquor.id %>"></div>
+          <script>
+            $('#star-rate-<%= @liquor.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              readOnly: true,
+              half: false,
+              score: <%= @liquor.star %>,
+            });
+          </script>
+        </td>
+        <!--星評価-->
+      <% end %>
+
+      <!--コメント-->
+      <div class="comments">
+        <% @liquor.liquor_comments.each do |liquor_comment| %>
+          <%= liquor_comment.user.name %>
+          <%= liquor_comment.comment %>
+          <% if liquor_comment.user == current_user %>
+
+          <div class="comment-delete">
+            <%= link_to "Delete", users_liquor_liquor_comment_path(liquor_comment.liquor, liquor_comment), method: :delete, class: "btn btn-sm btn-danger" %>
+          </div>
           <% end %>
+        <% end %>
+      </div>
+
+      <div class="new-comment">
+        <%= form_with(model:[@liquor, @liquor_comment], local: true) do |f| %>
+          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+          <%= f.submit "送信する" %>
+        <% end %>
+      </div>
+      <!--コメント-->
 
     </div>
   </div>
