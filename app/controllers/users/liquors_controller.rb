@@ -1,14 +1,13 @@
 class Users::LiquorsController < ApplicationController
 
   def index #お酒の一覧を表示
-   @liquors = Liquor.page(params[:page]).per(8)
   # @liquor = Liquor.new
   # @liquor_comment = LiquorComment.new
    if params[:genre_id]
       # ganreのデータベースのテーブルから一致するidを取得
-     @liquors = Liquor.where(genre_id: params[:genre_id]).all.page(params[:page]).per(8)
+     @liquors = Liquor.where(genre_id: params[:genre_id]).page(params[:page]).per(8)
    else
-      # 商品すべてを取得
+      # お酒すべてを取得
      @liquors = Liquor.all.page(params[:page]).per(8)
    end
   end

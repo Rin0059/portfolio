@@ -1,13 +1,14 @@
 <div class="row">
-  <% @genre.each do |genre| %>
+  <% @genres.each do |genre| %>
     <div class="col-md-3" style="text-align:center;">
       <div class="card-deck">
         <div class="card">
-          <%= link_to users_liquors_path(@liquor) do %>
-            <%= attachment_image_tag(genre, :image, size: "200x150", fallback: "no_image.jpg") %>
+          <%= link_to users_liquors_path(genre_id: genre.id) do %>
+          attachment
+            <%= attachment_image_tag(genre, :image, size: "200x150", fallback: "whisky.jpg") %>
           <% end %>
           <div class="card-body">
-            <p class="card-title">[<%= liquor.genre.name %>]</p>
+            <p class="card-title">[<%= genre.name %>]</p>
           </div>
         </div>
       </div>

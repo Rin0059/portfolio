@@ -107,28 +107,3 @@ footer {
 }
 
 // =========== topページのジャンル一覧 ============
-
-.thumb_list {
-  width: 30%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.thumb_list li {
-  display: flex;
-  flex-wrap: wrap;
-  width: 40%;
-  margin: 0 0 0 auto;
-}
-
-.thumb_item_inner {
-  background-size: 100% 100%;
-}
-
-.svg {
-  width: 15rem;
-  display: block;
-  margin: 0 auto;
-  padding: 23% 0 0;
-}

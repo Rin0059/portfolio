@@ -27,9 +27,9 @@
                 <td><%= link_to liquor.name, users_liquor_path(liquor.id) %></td>
                 <td><%= liquor.detail %></td>
                 <td><%= liquor.genre.name %></td>
-                <td class="favorite-btn-<%= liquor.id %>">
-                   <%= render 'favorites/favorite-btn', liquor: liquor %>
-                </td>
+                <!--<td class="favorite-btn-<%= liquor.id %>">-->
+                <!--   <%#= render 'favorites/favorite-btn', liquor: liquor %>-->
+                <!--</td>-->
                 <td><%= link_to "#{liquor.liquor_comments.count} コメント", users_liquor_path(liquor.id) %></td></td>
             </tr>
           <% end %>
