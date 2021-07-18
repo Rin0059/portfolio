@@ -2,6 +2,13 @@
 @import 'skippr';
 
 
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+
 header {
   height: 4rem;
   background-image: url("header_footer.jpeg");
@@ -26,6 +33,7 @@ main {
 
 .content {
   height: 100%;
+  padding: 10px 20px;
 }
 
 .header-top{
@@ -64,6 +72,8 @@ main {
   height: 150px;
 }
 
+
+
 .p,th,td {
   color: #996666;
   text-align: center;
@@ -87,23 +97,15 @@ footer {
 // ========= topページのスライド ================
 .slide1 {
   background-image: image-url("whisky.jpg");
-  height: 500px;
-  width: 100%;
 }
 .slide2 {
   background-image: image-url("wine.jpg");
-  height: 500px;
-  width: 100%;
 }
 .slide3 {
   background-image: image-url("beer.jpg");
-  height: 500px;
-  width: 100%;
 }
 .slide4 {
   background-image: image-url("cocktail.jpg");
-  height: 500px;
-  width: 100%;
 }
 
 // =========== topページのジャンル一覧 ============
