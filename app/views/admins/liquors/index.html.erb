@@ -27,7 +27,7 @@
                 <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
                 <td><%= link_to liquor.name, admins_liquor_path(liquor.id) %></td>
                 <td><%= liquor.detail %></td>
-                <td><%= liquor.genre.name %></td>
+                <td><%= liquor.genre %></td>
             </tr>
           <% end %>
           </tbody>

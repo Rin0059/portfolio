@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  background-image: url("body.jpg");
+  // background-image: url("body.jpg");
   background-size: cover;
 }
 
@@ -86,10 +86,12 @@ main {
 }
 
 footer {
-  margin-top: auto;
   text-align: center;
   color: #996666;
   background-image: url("header_footer.jpeg");
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 

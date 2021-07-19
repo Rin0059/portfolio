@@ -4,19 +4,19 @@
      <div class='col-md-1'>
       <%= attachment_image_tag @liquor, :image, fallback: "no_image.jpg", size: "300x250" %>
      </div>
-     <div class='col-md-5 offset-md-5'>
+     <div class='col-md-8'>
       <table class="table table-borderless">
        <tr>
       	  <th>お酒名</th>
-      	  <th><%= @liquor.name %></th>
+      	  <td><%= @liquor.name %></td>
      	 </tr>
        <tr>
       	  <th>お酒説明</th>
-      	  <th><%= @liquor.detail %></th>
+      	  <td><%= @liquor.detail %></td>
        </tr>
        <tr>
       	  <th>ジャンル</th>
-      	  <th><%= @liquor.genre.name %></th>
+      	  <td><%= @liquor.genre.name %></td>
        </tr>
       </table>
      </div>

@@ -1,0 +1,44 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>銘柄</th>
+      <th>説明</th>
+      <th>ジャンル</th>
+      <th>いいね</th>
+      <th>コメント</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @liquors.each do |liquor| %>
+      <tr id="liquor_<%= liquor.id %>">
+        <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
+        <td><%= liquor.name %></td>
+        <td><%= liquor.detail %></td>
+        <td><%= liquor.genre %></td>
+        <td class="favorite-btn-<%= liquor.id %>">
+          <%= render 'users/favorites/favorite-btn', liquor: liquor %>
+        </td>
+        <td><%= link_to "#{liquor.liquor_comments.count} コメント", users_liquor_path(liquor.id) %></td>
+
+        <!--星評価-->
+        <td>
+          <div id="rater-<%= liquor.id %>"></div>
+          <script>
+          $('#rate-<%= liquor.id %>').raty({
+            size: 20,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            readOnly: true,
+            half: true,
+            score: <%= liquor.rate %>,
+          });
+          </script>
+        </td>
+        <!--星評価-->
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

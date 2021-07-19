@@ -23,7 +23,7 @@ class Users::LiquorsController < ApplicationController
   def create #お酒の口コミを作成
     @liquor = Liquor.new(liquor_params)
     @liquor.user_id = current_user.id
-    if @liquor.save
+    if @liquor.save!
       redirect_to users_liquors_path(@liquor.id)
     else
       @liquors = Liquor.all
@@ -39,6 +39,6 @@ class Users::LiquorsController < ApplicationController
 
   private
   def liquor_params
-    params.require(:liquor).permit(:neme, :detail, :image, :rate, :comment)
+    params.require(:liquor).permit(:neme, :detail, :image, :rate, :comment, :genre_id)
   end
 end

@@ -12,7 +12,7 @@ before_action :authenticate_admin!
 
   def create #お酒を新規登録
    @liquor = Liquor.new(liquor_params)
-   @liquor.save
+   @liquor.save!
    redirect_to admins_liquors_path(@liquor)
   end
 
