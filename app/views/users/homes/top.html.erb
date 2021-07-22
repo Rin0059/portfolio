@@ -15,7 +15,26 @@
         <%= render "/layouts/sidebar", genre: @genres %>
       </div>
 
-      <%= link_to '全てのお酒を見る', users_liquors_path, class:"btn btn-outline-dark" %>
+      <p class="mt-4"><%= link_to '全てのお酒を見る', users_liquors_path, class:"btn btn-outline-dark" %></p>
     </div>
   </div>
 </div>
+
+
+ <%= render 'layouts/footer' %>
+
+<style>
+.content {
+  height:500px;
+}
+
+footer {
+  text-align: center;
+  color: #996666;
+  background-image: url("header_footer.jpeg");
+  width: 100%;
+  position: absolute;
+  top: 1650px;
+  z-index: 10;
+}
+</style>

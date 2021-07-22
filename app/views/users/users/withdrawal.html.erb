@@ -12,7 +12,7 @@
   </div>
   <div class="row justify-content-around mt-5">
     <div clss="col">
-      <%= link_to "退会しない", uesrs_user_path(current_user) ,class: "btn btn-primary " %>
+      <%= link_to "退会しない", users_users_path(current_user) ,class: "btn btn-primary " %>
     </div>
     <div clss="col">
       <%= button_to "退会する", users_users_withdrawal_path, method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>

@@ -19,6 +19,8 @@
       <p id="alert"><%= flash[:alert] %></p>
       <%= yield %>
     </main>
-    <%= render 'layouts/footer' %>
+    <% unless controller.action_name == "top" %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>

@@ -15,7 +15,7 @@
         <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
         <td><%= liquor.name %></td>
         <td><%= liquor.detail %></td>
-        <td><%= liquor.genre %></td>
+        <td><%= liquor.genre.name %></td>
         <td class="favorite-btn-<%= liquor.id %>">
           <%= render 'users/favorites/favorite-btn', liquor: liquor %>
         </td>
@@ -37,7 +37,6 @@
           </script>
         </td>
         <!--星評価-->
-
       </tr>
     <% end %>
   </tbody>

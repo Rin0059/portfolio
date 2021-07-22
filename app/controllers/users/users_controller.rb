@@ -24,7 +24,7 @@ class Users::UsersController < ApplicationController
    end
   end
 
-  def withdraw #退会確認画面
+  def withdrawal #退会確認画面
   end
 
   def destroy #退会実行

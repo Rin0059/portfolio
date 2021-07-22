@@ -24,11 +24,8 @@ body {
   text-align: center;
   // background-image: url("body.jpg");
   background-size: cover;
-}
-
-
-main {
-  height: 500px;
+  position: relative;
+  padding-bottom: 40px;
 }
 
 .content {
@@ -96,6 +93,7 @@ footer {
 
 
 
+
 // ========= topページのスライド ================
 .slide1 {
   background-image: image-url("whisky.jpg");
@@ -110,4 +108,4 @@ footer {
   background-image: image-url("cocktail.jpg");
 }
 
-// =========== topページのジャンル一覧 ============
+// ========= topページのスライド ================

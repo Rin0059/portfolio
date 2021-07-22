@@ -10,15 +10,17 @@ class Users::LiquorsController < ApplicationController
    end
   end
 
+
   def new #お酒の新規投稿画面
     @liquor = Liquor.new
   end
 
   def show #お酒の詳細画面を表示
     @liquor = Liquor.find(params[:id])
-    @user = User.find(params[:id])
+    @user = @liquor.user
     @liquor_comment = LiquorComment.new
   end
+
 
   def create #お酒の口コミを作成
     @liquor = Liquor.new(liquor_params)
@@ -33,12 +35,28 @@ class Users::LiquorsController < ApplicationController
   end
 
 
+  def edit #お酒の編集画面を表示
+    @liquor = Liquor.find(params[:id])
+    if @liquor.user == current_user
+      render :edit
+    else
+      redirect_to users_liquors_path
+    end
+  end
+
+
+  def destroy #お酒の削除
+    @liquor = Liquor.find(params[:id])
+    @liquor.destroy
+    redirect_to users_liquors_path
+  end
+
 
   def search #お酒のジャンル検索
   end
 
   private
   def liquor_params
-    params.require(:liquor).permit(:neme, :detail, :image, :rate, :comment, :genre_id)
+    params.require(:liquor).permit(:name, :detail, :image, :rate, :comment, :genre_id)
   end
 end

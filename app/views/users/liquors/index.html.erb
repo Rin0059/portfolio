@@ -10,6 +10,7 @@
         <i class="fas fa-plus"></i>
       <% end %>
     </p>
+    <!--新規登録画面へ-->
 
     <table class="table">
           <thead>
@@ -28,7 +29,7 @@
                 <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
                 <td><%= link_to liquor.name, users_liquor_path(liquor.id) %></td>
                 <td><%= liquor.detail %></td>
-                <td><%= liquor.genre %></td>
+                <td><%= liquor.genre.name %></td>
                 <td class="favorite-btn-<%= liquor.id %>">
                    <%= render 'users/favorites/favorite-btn', liquor: liquor %>
                 </td>
