@@ -21,6 +21,9 @@
         </td>
         <td><%= link_to "#{liquor.liquor_comments.count} コメント", users_liquor_path(liquor.id) %></td>
 
+        <td><%= link_to '編集', edit_users_liquor_path(liquor), class: "btn btn-sm btn-success edit_liquor_#{liquor.id}" %></td>
+        <td><%= link_to '削除', users_liquor_path(liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@user.id}" %></td>
+
         <!--星評価-->
         <td>
           <div id="rater-<%= liquor.id %>"></div>

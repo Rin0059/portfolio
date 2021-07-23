@@ -35,6 +35,6 @@ before_action :authenticate_admin!
 
   private
   def liquor_params
-    params.require(:liquor).permit(:name, :detail, :image, :genre_id )
+    params.require(:liquor).permit(:name, :detail, :image, :genre_id)
   end
 end

@@ -25,7 +25,7 @@ class Users::LiquorsController < ApplicationController
   def create #お酒の口コミを作成
     @liquor = Liquor.new(liquor_params)
     @liquor.user_id = current_user.id
-    if @liquor.save!
+    if @liquor.save
       redirect_to users_liquors_path(@liquor.id)
     else
       @liquors = Liquor.all
@@ -42,6 +42,16 @@ class Users::LiquorsController < ApplicationController
     else
       redirect_to users_liquors_path
     end
+  end
+
+
+  def update #お酒の編集を更新
+   @liquor = Liquor.find(params[:id])
+   if @liquor.update(liquor_params)
+     redirect_to users_liquors_path
+   else
+     render :edit
+   end
   end
 
 

@@ -33,20 +33,20 @@
       <h2>Create Genre</h2>
 
         <%= form_with model: @genre, url:  admins_genres_path, local:true do |f| %>
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="name">Name</label>
               <%= f.text_field :name %>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <div class="input-group">
        	    <label for="image">image</label>
        	      <%= f.attachment_field :image, class: "form-image" %>
        	    </div>
        	  </div>
 
-          <div class="form-group">
-              <%= f.submit "Create Genre" %>
+          <div class="form-group mt-3">
+              <%= f.submit "新規登録" %>
           </div>
       <% end %>
     </div>

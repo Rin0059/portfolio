@@ -1,0 +1,52 @@
+<% if current_user == @user %>
+  <!--星評価-->
+  <td>
+    <div id="rate-<%= @liquor.id %>"></div>
+    <script>
+      $('#rate-<%= @liquor.id %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        readOnly: true,
+        half: true,
+        score: <%= @liquor.rate %>,
+      });
+    </script>
+  </td>
+  <!--星評価-->
+<% end %>
+
+<!--コメント-->
+<div class="col-mb-12">
+  <% @liquor.liquor_comments.each do |liquor_comment| %>
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>氏名</th>
+          <th>コメント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= liquor_comment.user.name %></td>
+          <td><%= liquor_comment.comment %></td>
+          <% if liquor_comment.user == current_user %>
+            <td><%= link_to "削除", users_liquor_liquor_comment_path(liquor_comment.liquor, liquor_comment), method: :delete, class: "btn btn-sm btn-danger" %></td>
+          <% end %>
+        <% end %>
+
+        <div class="new-comment">
+          <%= form_with(url: users_liquor_liquor_comments_path(@liquor, @liquor_comment), local: true) do |f| %>
+            <td><%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %></td>
+            <td><%= f.submit "送信する" %></td>
+          <% end %>
+        </div>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
+<!--コメント-->
