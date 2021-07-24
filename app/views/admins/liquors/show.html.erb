@@ -1,25 +1,26 @@
- <div class='col-md-9 offset-md-2'>
-  <h2>お酒詳細</h2>
+ <div class='col-md-9 offset-md-2 mt-5'>
     <div class='row'>
-     <div class='col-md-1'>
+     <div class='col-md-3'>
       <%= attachment_image_tag @liquor, :image, fallback: "no_image.jpg", size: "300x250" %>
      </div>
-     <div class='col-md-8'>
+     <div class='col-md-8 mt-4'>
       <table class="table table-borderless">
        <tr>
-      	  <th>お酒名</th>
-      	  <td><%= @liquor.name %></td>
+      	  <td>
+      	   <h3><%= @liquor.name %></h3>
+      	  </td>
      	 </tr>
        <tr>
-      	  <th>お酒説明</th>
+      	  <!--<th>お酒説明</th>-->
       	  <td><%= @liquor.detail %></td>
        </tr>
        <tr>
-      	  <th>ジャンル</th>
+      	  <!--<th>ジャンル</th>-->
       	  <td><%= @liquor.genre.name %></td>
        </tr>
       </table>
      </div>
     </div>
   <%= link_to "編集する", edit_admins_liquor_path(@liquor), class: "btn btn-success btn-lg" %>
+  <%= link_to '削除', admins_liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}" %>
  </div>

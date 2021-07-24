@@ -13,16 +13,16 @@
     <!--新規登録画面へ-->
 
     <table class="table">
-          <thead>
-            <tr>
-              <th>画像</th>
-              <th>銘柄</th>
-              <th>説明</th>
-              <th>ジャンル</th>
-              <th>いいね</th>
-              <th>コメント</th>
-            </tr>
-          </thead>
+          <!--<thead>-->
+          <!--  <tr>-->
+          <!--    <th>画像</th>-->
+          <!--    <th>銘柄</th>-->
+          <!--    <th>説明</th>-->
+          <!--    <th>ジャンル</th>-->
+          <!--    <th>いいね</th>-->
+          <!--    <th>コメント</th>-->
+          <!--  </tr>-->
+          <!--</thead>-->
           <tbody>
           <% @liquors.each do |liquor| %>
             <tr>
@@ -33,11 +33,11 @@
                 <td class="favorite-btn-<%= liquor.id %>">
                    <%= render 'users/favorites/favorite-btn', liquor: liquor %>
                 </td>
-                <td><%= link_to "#{liquor.liquor_comments.count} コメント", users_liquor_path(liquor.id) %></td>
+                <td><i class="far fa-comment-dots"></i><%= link_to "#{liquor.liquor_comments.count}", users_liquor_path(liquor.id) %></td>
 
                 <!--星評価-->
                 <td>
-                  <div id="rater-<%= liquor.id %>"></div>
+                  <div id="rate-<%= liquor.id %>"></div>
                   <script>
                   $('#rate-<%= liquor.id %>').raty({
                     size: 20,

@@ -1,9 +1,14 @@
-<% if liquor.favorited_by?(current_user) %>
-  <%= link_to users_liquor_favorites_path(liquor), method: :delete, remote: true do %>
-      ♥<%= liquor.favorites.count %>
+<% if user_signed_in? %>
+  <% if liquor.favorited_by?(current_user) %>
+    <%= link_to users_liquor_favorites_path(liquor), method: :delete, remote: true do %>
+      <i class="fas fa-heart"></i>
     <% end %>
-    <% else %>
+
+  <% else %>
     <%= link_to users_liquor_favorites_path(liquor), method: :post, remote: true do %>
-      ♡<%= liquor.favorites.count %>
+      <i class="far fa-heart"></i>
     <% end %>
+
+  <% end %>
 <% end %>
+<i class="fas fa-heart"></i><%= liquor.favorites.count %>

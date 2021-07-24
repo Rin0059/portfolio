@@ -20,6 +20,7 @@
        	   <th>ジャンル</th>
        	   <td><%= f.collection_select :genre_id, Genre.all, :id, :name  %></td>
          </tr>
+
         </table>
         <%= f.submit "新規登録", class: "btn btn-success btn-lg"%>
        <% end %>

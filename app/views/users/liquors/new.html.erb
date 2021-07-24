@@ -22,10 +22,16 @@
          </tr>
          <tr>
            <th>評価</th>
-           <td><%= f.hidden_field :rate, id: :rate %></td>
-
+   
+           <td>
+              <div id="star">
+                <%= f.hidden_field :rate, id: :rate %>
+              </div>
+            </td>
+    
+           
            <script>
-           $('#rate').raty({
+           $('#star').raty({
              size: 20,
              starOff:  '<%= asset_path('star-off.png') %>',
              starHalf: '<%= asset_path('star-half.png') %>',

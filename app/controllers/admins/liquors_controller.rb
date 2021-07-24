@@ -33,6 +33,13 @@ before_action :authenticate_admin!
    end
   end
 
+  def destroy #お酒の削除
+    @liquor = Liquor.find(params[:id])
+    @liquor.destroy
+    redirect_to admins_liquors_path
+  end
+
+
   private
   def liquor_params
     params.require(:liquor).permit(:name, :detail, :image, :genre_id)

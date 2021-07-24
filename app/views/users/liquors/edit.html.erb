@@ -20,6 +20,25 @@
      	 <th>ジャンル</th>
      	 <th><%= f.collection_select :genre_id, Genre.all, :id, :name %></th>
       </tr>
+      <tr>
+       <th>評価</th>
+
+       <th>
+         <div id="star">
+           <%= f.hidden_field :rate, id: :rate %>
+         </div>
+       </th>
+       <script>
+        $('#star').raty({
+          size: 20,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          scoreName: 'liquor[rate]',
+          half: true,
+        });
+       </script>
+      </tr>
       </table>
       <%= f.submit "変更を保存", class: "btn btn-success btn-lg" %>
      <% end %>

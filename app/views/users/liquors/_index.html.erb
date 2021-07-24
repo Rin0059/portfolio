@@ -1,14 +1,5 @@
-<table class='table table-hover table-inverse'>
-  <thead>
-    <tr>
-      <th>画像</th>
-      <th>銘柄</th>
-      <th>説明</th>
-      <th>ジャンル</th>
-      <th>いいね</th>
-      <th>コメント</th>
-    </tr>
-  </thead>
+<table class='table table-hover table-inverse mt-4'>
+
   <tbody>
     <% @liquors.each do |liquor| %>
       <tr id="liquor_<%= liquor.id %>">
@@ -19,16 +10,16 @@
         <td class="favorite-btn-<%= liquor.id %>">
           <%= render 'users/favorites/favorite-btn', liquor: liquor %>
         </td>
-        <td><%= link_to "#{liquor.liquor_comments.count} コメント", users_liquor_path(liquor.id) %></td>
+        <td><i class="far fa-comment-dots"></i><%= link_to "#{liquor.liquor_comments.count}", users_liquor_path(liquor.id) %></td>
 
         <td><%= link_to '編集', edit_users_liquor_path(liquor), class: "btn btn-sm btn-success edit_liquor_#{liquor.id}" %></td>
         <td><%= link_to '削除', users_liquor_path(liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@user.id}" %></td>
 
         <!--星評価-->
         <td>
-          <div id="rater-<%= liquor.id %>"></div>
+          <div id="star-<%= liquor.id %>"></div>
           <script>
-          $('#rate-<%= liquor.id %>').raty({
+          $('#star-<%= liquor.id %>').raty({
             size: 20,
             starOff:  '<%= asset_path('star-off.png') %>',
             starHalf: '<%= asset_path('star-half.png') %>',
