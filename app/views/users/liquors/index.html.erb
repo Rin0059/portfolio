@@ -13,48 +13,38 @@
     <!--新規登録画面へ-->
 
     <table class="table">
-          <!--<thead>-->
-          <!--  <tr>-->
-          <!--    <th>画像</th>-->
-          <!--    <th>銘柄</th>-->
-          <!--    <th>説明</th>-->
-          <!--    <th>ジャンル</th>-->
-          <!--    <th>いいね</th>-->
-          <!--    <th>コメント</th>-->
-          <!--  </tr>-->
-          <!--</thead>-->
-          <tbody>
-          <% @liquors.each do |liquor| %>
-            <tr>
-                <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
-                <td><%= link_to liquor.name, users_liquor_path(liquor.id) %></td>
-                <td><%= liquor.detail %></td>
-                <td><%= liquor.genre.name %></td>
-                <td class="favorite-btn-<%= liquor.id %>">
-                   <%= render 'users/favorites/favorite-btn', liquor: liquor %>
-                </td>
-                <td><i class="far fa-comment-dots"></i><%= link_to "#{liquor.liquor_comments.count}", users_liquor_path(liquor.id) %></td>
+      <tbody>
+        <% @liquors.each do |liquor| %>
+        <tr>
+          <td>
+            <%= link_to liquor.name, users_liquor_path(liquor.id) %>
+            <%= attachment_image_tag liquor, :image, class:'img' %>
+            <!--星評価-->
+            <div id="rate-<%= liquor.id %>"></div>
+            <script>
+              $('#rate-<%= liquor.id %>').raty({
+                size: 20,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                readOnly: true,
+                half: true,
+                score: <%= liquor.rate %>,
+              });
+            </script>
+            <!--星評価-->
+          </td>
 
-                <!--星評価-->
-                <td>
-                  <div id="rate-<%= liquor.id %>"></div>
-                  <script>
-                  $('#rate-<%= liquor.id %>').raty({
-                    size: 20,
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starHalf: '<%= asset_path('star-half.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    readOnly: true,
-                    half: true,
-                    score: <%= liquor.rate %>,
-                  });
-                  </script>
-                </td>
-                <!--星評価-->
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
+          <td><%= liquor.detail %></td>
+          <td><%= liquor.genre.name %></td>
+          <td class="favorite-btn-<%= liquor.id %>">
+            <%= render 'users/favorites/favorite-btn', liquor: liquor %>
+          </td>
+          <td><i class="far fa-comment-dots"></i><%= link_to "#{liquor.liquor_comments.count}", users_liquor_path(liquor.id) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
     <div class="paginate">
       <%#= paginate @liquors %>

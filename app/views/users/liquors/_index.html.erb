@@ -3,8 +3,25 @@
   <tbody>
     <% @liquors.each do |liquor| %>
       <tr id="liquor_<%= liquor.id %>">
-        <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
-        <td><%= liquor.name %></td>
+        <td>
+          <%= liquor.name %>
+          <%= attachment_image_tag liquor, :image, class:'img' %>
+          <!--星評価-->
+          <div id="rate-<%= liquor.id %>"></div>
+          <script>
+          $('#rate-<%= liquor.id %>').raty({
+            size: 20,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            readOnly: true,
+            half: true,
+            score: <%= liquor.rate %>,
+          });
+          </script>
+          <!--星評価-->
+        </td>
+
         <td><%= liquor.detail %></td>
         <td><%= liquor.genre.name %></td>
         <td class="favorite-btn-<%= liquor.id %>">
@@ -15,22 +32,6 @@
         <td><%= link_to '編集', edit_users_liquor_path(liquor), class: "btn btn-sm btn-success edit_liquor_#{liquor.id}" %></td>
         <td><%= link_to '削除', users_liquor_path(liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@user.id}" %></td>
 
-        <!--星評価-->
-        <td>
-          <div id="star-<%= liquor.id %>"></div>
-          <script>
-          $('#star-<%= liquor.id %>').raty({
-            size: 20,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            readOnly: true,
-            half: true,
-            score: <%= liquor.rate %>,
-          });
-          </script>
-        </td>
-        <!--星評価-->
       </tr>
     <% end %>
   </tbody>

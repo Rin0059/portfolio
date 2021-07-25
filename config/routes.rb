@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     end
     patch '/users/withdrawal' => 'users#destroy'#会員ステータスの切替(退会)
     get '/users/withdrawal' => 'users#withdrawal'#退会画面への遷移
-    resource :users, only:[:show ,:edit,:update]
+    resources :users, only:[:show ,:edit,:update]
     resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'

@@ -4,7 +4,7 @@ class Users::UsersController < ApplicationController
 
 
   def show #マイページ(詳細画面)の表示
-   @user = current_user
+   @user = User.find(params[:id])
    @liquors = @user.liquors
   end
 
@@ -16,7 +16,7 @@ class Users::UsersController < ApplicationController
    @user = current_user
    if @user.update(user_params)
      flash[:notice] = "変更内容を保存しました"
-     redirect_to users_users_path
+     redirect_to users_user_path
    else
      @user = user
      flash[:alert] = "正しく入力して下さい"

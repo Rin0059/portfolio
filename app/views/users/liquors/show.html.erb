@@ -3,6 +3,25 @@
   <div class="row mt-5">
     <div class="col-md-4 text-center mb-3">
       <%= attachment_image_tag @liquor, :image, size: '310x300' %>
+      <%# if current_user == @user %>
+        <!--星評価-->
+        <td>
+          <div id="rate-<%= @liquor.id %>"></div>
+          <script>
+            $('#rate-<%= @liquor.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              readOnly: true,
+              half: true,
+              score: <%= @liquor.rate %>,
+            });
+          </script>
+        </td>
+        <!--星評価-->
+      <%# end %>
+      <%= link_to @liquor.user.name, users_user_path(@user) %>
     </div>
 
     <div class="col-md-8 px-5">
