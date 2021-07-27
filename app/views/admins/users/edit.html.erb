@@ -25,14 +25,14 @@
           <div class="col-sm-4"><label>会員ステータス</label></div>
           <div class="col-sm-4">
             <div class="radio-inline">
-             <%= f.radio_button :user_status, :有効 %>
+             <%= f.radio_button :user_status, :true %>
              <%= f.label :有効, class: "user_status_label" %>
           </div>
         </div>
 
           <div class="col-sm-4">
            <div class="radio-inline">
-           <%= f.radio_button :user_status, :退会 %>
+           <%= f.radio_button :user_status, :false %>
            <%= f.label :退会, class: "user_status_label" %>
            </div>
           </div>

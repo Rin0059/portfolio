@@ -22,12 +22,8 @@
           <tbody>
           <% @liquors.each do |liquor| %>
             <tr>
-                <td><%= attachment_image_tag liquor, :image, class:'img' %></td>
-                <td><%= link_to liquor.name, admins_liquor_path(liquor.id) %></td>
-                <td><%= liquor.detail %></td>
-                <td><%= liquor.genre.name %></td>
-                 <!--星評価-->
-                <td>
+                <td><%= attachment_image_tag liquor, :image, class:'img' %>
+                <!--星評価-->
                   <div id="rate-<%= liquor.id %>"></div>
                   <script>
                   $('#rate-<%= liquor.id %>').raty({
@@ -40,8 +36,11 @@
                     score: <%= liquor.rate %>,
                   });
                   </script>
-                </td>
                 <!--星評価-->
+                </td>
+                <td><%= link_to liquor.name, admins_liquor_path(liquor.id) %></td>
+                <td><%= liquor.detail %></td>
+                <td><%= liquor.genre.name %></td>
             </tr>
           <% end %>
           </tbody>
