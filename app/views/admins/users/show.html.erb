@@ -1,5 +1,5 @@
 <div class='container'>
-  <div class='col-md-8 offset-md-4'>
+  <div class='col-md-5 offset-md-4'>
    <h2 class = "my-3 py-3"><%= @user.name%>さんの会員詳細</h2>
     <table class="table">
       <tr>
@@ -24,8 +24,12 @@
 
 　　　<tr>
 　　　  <td></td>
-　　　  <td><%= link_to '編集する',edit_admins_user_path(@user.id), class:"btn btn-success" %>　<%= link_to '投稿履歴を見る',admins_top_path, class:"btn btn-info" %></td>
+　　　  <td><%= link_to '編集する',edit_admins_user_path(@user.id), class:"btn btn-success" %></td>
 　　　</tr>
     </table>
   </div>
+   <div class="row mb-3">
+      <h4 class="mt-5 mr-3 mb-0 ml-3">投稿履歴</h4>
+      <%= render 'users/liquors/index',liquors: @liquors %>
+    </div>
 </div>

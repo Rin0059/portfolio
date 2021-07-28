@@ -23,18 +23,17 @@
 
         <div class="form-group row my-3">
           <div class="col-sm-4"><label>会員ステータス</label></div>
-          <div class="col-sm-4">
+          <div class="col-sm-2">
             <div class="radio-inline">
              <%= f.radio_button :user_status, :true %>
              <%= f.label :有効, class: "user_status_label" %>
           </div>
         </div>
 
-          <div class="col-sm-4">
+
            <div class="radio-inline">
-           <%= f.radio_button :user_status, :false %>
-           <%= f.label :退会, class: "user_status_label" %>
-           </div>
+             <%= f.radio_button :user_status, :false %>
+             <%= f.label :退会, class: "user_status_label" %>
           </div>
         </div>
 

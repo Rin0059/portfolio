@@ -2,6 +2,23 @@
     <div class='row'>
      <div class='col-md-3'>
       <%= attachment_image_tag @liquor, :image, fallback: "no_image.jpg", size: "300x250" %>
+      <!--星評価-->
+        <td>
+          <div id="rate-<%= @liquor.id %>"></div>
+          <script>
+            $('#rate-<%= @liquor.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              readOnly: true,
+              half: true,
+              score: <%= @liquor.rate %>,
+            });
+          </script>
+        </td>
+        <!--星評価-->
+        <%= link_to @liquor.user.name, admins_user_path(@user) %>
      </div>
      <div class='col-md-8 mt-4'>
       <table class="table table-borderless">
@@ -21,6 +38,6 @@
       </table>
      </div>
     </div>
-  <%= link_to "編集する", edit_admins_liquor_path(@liquor), class: "btn btn-success btn-lg" %>
+  <%= link_to "編集する", edit_admins_liquor_path(@liquor), class: "btn btn-sm btn-success btn-lg" %>
   <%= link_to '削除', admins_liquor_path(@liquor), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_liquor_#{@liquor.id}" %>
  </div>

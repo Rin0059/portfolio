@@ -9,6 +9,7 @@ class Admins::UsersController < ApplicationController
 
   def show #会員の詳細画面を表示
    @user = User.find(params[:id])
+   @liquors = @user.liquors
   end
 
   def edit #会員の編集画面を表示

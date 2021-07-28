@@ -18,6 +18,7 @@ before_action :authenticate_admin!
 
   def show #お酒の詳細画面を表示
    @liquor = Liquor.find(params[:id])
+   @user = @liquor.user
   end
 
   def edit #お酒の編集画面を表示

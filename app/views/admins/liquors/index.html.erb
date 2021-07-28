@@ -11,21 +11,15 @@
         </p>
 
         <table class="table">
-          <thead>
-            <tr>
-              <th>画像</th>
-              <th>銘柄</th>
-              <th>説明文</th>
-              <th>ジャンル</th>
-            </tr>
-          </thead>
           <tbody>
           <% @liquors.each do |liquor| %>
             <tr>
-                <td><%= attachment_image_tag liquor, :image, class:'img' %>
+              <td>
+                <%= link_to liquor.name, admins_liquor_path(liquor.id) %>
+                <%= attachment_image_tag liquor, :image, class:'img' %>
                 <!--星評価-->
-                  <div id="rate-<%= liquor.id %>"></div>
-                  <script>
+                <div id="rate-<%= liquor.id %>"></div>
+                <script>
                   $('#rate-<%= liquor.id %>').raty({
                     size: 20,
                     starOff:  '<%= asset_path('star-off.png') %>',
@@ -35,12 +29,11 @@
                     half: true,
                     score: <%= liquor.rate %>,
                   });
-                  </script>
+                </script>
                 <!--星評価-->
-                </td>
-                <td><%= link_to liquor.name, admins_liquor_path(liquor.id) %></td>
-                <td><%= liquor.detail %></td>
-                <td><%= liquor.genre.name %></td>
+              </td>
+              <td><%= liquor.detail %></td>
+              <td><%= liquor.genre.name %></td>
             </tr>
           <% end %>
           </tbody>

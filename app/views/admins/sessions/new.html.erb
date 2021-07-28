@@ -1,14 +1,14 @@
 <h3 class="ml-4 mb-5">管理者ログイン</h3>
 <%= form_with model: @admin, url: admin_session_path, id: 'new_user', class: 'new_user', local: true do |f|%>
   <div class="row ml-5">
-    <label class="col-lg-3 ml-5">メールアドレス</label>
+    <label class="col-md-4 ml-5">メールアドレス</label>
     <div class="col-lg-3">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: 'col-sm-12' %>
     </div>
   </div><br>
 
   <div class="row ml-5">
-    <label class="col-lg-3 ml-5">パスワード
+    <label class="col-md-4 ml-5">パスワード
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %>文字以上)</em>
     <% end %></label>
