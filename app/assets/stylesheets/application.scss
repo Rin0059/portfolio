@@ -11,7 +11,7 @@
 
 header {
   height: 4rem;
-  background-image: url("header_footer.jpeg");
+  background-image: image-url("header_footer.jpeg");
 }
 
 
@@ -85,7 +85,7 @@ body {
 footer {
   text-align: center;
   color: #996666;
-  background-image: url("header_footer.jpeg");
+  background-image: image-url("header_footer.jpeg");
   position: absolute;
   bottom: 0;
   width: 100%;
