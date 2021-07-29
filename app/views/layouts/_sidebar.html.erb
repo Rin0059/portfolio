@@ -4,7 +4,7 @@
       <div class="card-deck">
         <div class="card bg-dark text-white">
           <%= link_to users_liquors_path(genre_id: genre.id) do %>
-            <%= attachment_image_tag(genre, :image,  size: "200x200", fallback: "whisky.jpg") %>
+            <%= attachment_image_tag　assets_path(genre, :image,  size: "200x200", fallback: "whisky.jpg") %>
           <% end %>
           <p class="card-title"><%= genre.name %></p>
         </div>
